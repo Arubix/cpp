@@ -5,18 +5,18 @@ using namespace std;
 void rectangle();
 void cubed(int a, int b, int c);
 
-class Rect{
+class Shape{
   protected:
     int *width, *length, *height;
   public:
-    Rect(int, int, int);
-    ~Rect();
+    Shape(int, int, int);
+    ~Shape();
     
     int area(void){
         return (*width * *length * *height);
     }
 };
-Rect::Rect(int w, int l, int h){
+Shape::Shape(int w, int l, int h){
     width = new int;
     length = new int;
     height = new int;
@@ -25,7 +25,7 @@ Rect::Rect(int w, int l, int h){
     *height = h;
 }
 
-Rect::~Rect(){
+Shape::~Shape(){
     delete width;
     delete length;
     delete height;
@@ -71,13 +71,13 @@ void rectangle(){
     cout << "What is the length of the rectangle?\n";
     cin >> y;
         
-    Rect rect(x, y, z);
+    Shape rect(x, y, z);
         
     cout << "\nThe area of the rectangle is: " << rect.area() << endl;
 }
 void cubed(int a, int b, int c){
     
-    Rect cube(a, b, c);
+    Shape cube(a, b, c);
         
     cout << "\nThe area of the rectangle is: " << cube.area() << endl;
 }
