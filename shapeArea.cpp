@@ -2,6 +2,9 @@
 
 using namespace std;
 
+void rectangle();
+void cubed(int a, int b, int c);
+
 class Rect{
   protected:
     int *width, *length, *height;
@@ -44,17 +47,10 @@ int main(){
         cin >> i;
     }
     
-    if(i == 1){
-        cout << "What is the width of the rectangle?\n";
-        cin >> w;
-        cout << "What is the length of the rectangle?\n";
-        cin >> l;
-        
-        Rect rect(w, l, h);
-        
-        cout << "\nThe area of the rectangle is: " << rect.area() << endl;
+    if(i == 1)
+        rectangle();
     
-    } else {
+    else {
         cout << "What is the width of the cube?\n";
         cin >> w;
         cout << "What is the length of the cube?\n";
@@ -62,11 +58,26 @@ int main(){
         cout << "What is the height of the cube?\n";
         cin >> h;
         
-        Rect cube(w, l, h);
-        
-        cout << "\nThe area of the rectangle is: " << cube.area() << endl;
-        
+        cubed(w, l, h);
     }
     
     return 0;
+}
+void rectangle(){
+    int x, y, z = 1;
+    
+    cout << "What is the width of the rectangle?\n";
+    cin >> x;
+    cout << "What is the length of the rectangle?\n";
+    cin >> y;
+        
+    Rect rect(x, y, z);
+        
+    cout << "\nThe area of the rectangle is: " << rect.area() << endl;
+}
+void cubed(int a, int b, int c){
+    
+    Rect cube(a, b, c);
+        
+    cout << "\nThe area of the rectangle is: " << cube.area() << endl;
 }
